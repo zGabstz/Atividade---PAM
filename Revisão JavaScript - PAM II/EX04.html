@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 04</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Exemplo de onmouseover (Quando o mouse passa sobre o elemento) -->
+    <h2>Exemplo de OnMouseover:</h2>
+    <div class="box"></div>
+
+    <hr>
+
+    <!-- Exemplo de onfocus (Quando um elemento recebe foco) -->
+    <h2>Exemplo de OnFocus:</h2>
+    <input type="text" onfocus="Foco()" id="Dados">
+
+    <hr>
+
+    <!-- Exemplo de onchange (Quando o valor de um elemento é alterado e perde o foco) -->
+    <h2>Escolha uma fruta: (exemplo de OnChange)</h2>
+    <select id="frutas">
+        <option value="banana">Banana</option>
+        <option value="maçã">Maçã</option>
+        <option value="laranja">Laranja</option>
+    </select>
+
+    <hr>
+    <h2>Exemplo de oninput:</h2>
+    <!-- Campo de entrada para digitar o nome -->
+    <label for="nome">Digite seu nome:</label>
+    <input type="text" id="nome" placeholder="Seu nome aqui...">
+
+    <!-- Elemento para exibir o nome digitado dinamicamente -->
+    <div id="nomeDigitado"></div>
+
+    <script>
+        // Adiciona o evento onmouseover para mudar a cor da caixa quando o mouse passa sobre ela
+        document.querySelector('.box').onmouseover = function () {
+            mudarCor();
+        };
+
+        // Adiciona o evento onchange para mostrar a opção selecionada no select
+        document.getElementById('frutas').onchange = function () {
+            mostrarSelecao();
+        };
+
+        // Função para mudar a cor da caixa quando o mouse passa sobre ela
+        function mudarCor() {
+            document.querySelector('.box').style.backgroundColor = 'blue';
+        }
+
+        function Foco() {
+            var f = document.getElementById("Dados")
+            f.style.backgroundColor = "#EEE8AA"
+            f.style.color = "#D8BFD8"
+        }
+
+        // Função para mostrar a opção selecionada no select
+        function mostrarSelecao() {
+            var selecao = document.getElementById('frutas').value;
+            alert('Você selecionou: ' + selecao);
+        }
+
+        // Função para exibir o nome digitado dinamicamente
+        function exibirNomeDigitado() {
+            var nome = document.getElementById('nome').value;
+            document.getElementById('nomeDigitado').textContent = "Olá, " + nome + "!";
+
+        }
+
+        document.getElementById('nome').oninput = exibirNomeDigitado;
+
+    </script>
+</body>
+
+</html>

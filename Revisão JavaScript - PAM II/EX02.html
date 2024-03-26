@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+</head>
+<body>
+
+<h2>Exemplo 02 - Botão com alerta</h2>
+
+    <button id="botaoAlerta">Clique aqui para ver uma mensagem de alerta</button>
+
+    <script>
+        function exibirAlerta() {
+            alert("Você clicou no botão!");
+        }
+        var botao = document.getElementById("botaoAlerta");
+        botao.addEventListener("click", exibirAlerta);
+    </script>
+
+</body>
+</html>

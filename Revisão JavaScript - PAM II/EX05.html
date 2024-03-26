@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 05</title>
+</head>
+<body>
+
+    <h2> Exemplo 05 - Funções</h2>
+    <hr>
+</br>
+<!-- Botão para chamar a função de confirmação -->
+<button onclick="confirmarAcao()">Confirmar Ação</button>
+
+<!-- Botão para chamar a função que mostra a data e hora -->
+<button onclick="mostrarDataHora()">Mostrar Data e Hora</button>
+
+<!-- Botão para chamar a função que verifica a idade -->
+<button onclick="verificarIdade()">Verificar Idade</button>
+
+<!-- Botão para chamar a função que calcula o fatorial -->
+<button onclick="calcularFatorial()">Calcular Fatorial</button>
+
+<!-- Botão para chamar a função que exibe uma mensagem personalizada -->
+<button onclick="exibirMensagemPersonalizada()">Exibir Mensagem Personalizada</button>
+
+
+<script>
+     // Função que mostra uma mensagem de confirmação ao clicar em um botão
+     function confirmarAcao() {
+            var confirmacao = confirm("Você tem certeza que deseja prosseguir?");
+            if (confirmacao) {
+                alert("Ação confirmada!");
+            } else {
+                alert("Ação cancelada!");
+            }
+        }
+    
+        // Função que exibe a data e hora atual
+        function mostrarDataHora() {
+            var dataHoraAtual = new Date();
+            alert("A data e hora atual são: " + dataHoraAtual);
+        }
+    
+        // Função que verifica se o usuário é maior de idade
+        function verificarIdade() {
+            var idade = prompt("Digite sua idade:");
+            if (idade >= 18) {
+                alert("Você é maior de idade.");
+            } else {
+                alert("Você é menor de idade.");
+            }
+        }
+    
+        // Função que calcula o fatorial de um número
+        function calcularFatorial() {
+            var numero = prompt("Digite um número para calcular o fatorial:");
+            var fatorial = 1;
+            for (var i = 1; i <= numero; i++) {
+            fatorial *= i;
+        }
+        alert("O fatorial de " + numero + " é: " + fatorial);
+    }
+
+    // Função que exibe uma mensagem personalizada
+    function exibirMensagemPersonalizada() {
+        var mensagem = prompt("Digite sua mensagem:");
+        alert("Sua mensagem é: " + mensagem);
+    }
+
+</script>
+
+</body>
+</html>
